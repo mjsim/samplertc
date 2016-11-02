@@ -5,18 +5,12 @@ include('./randos.php');
 
 use Twilio\Jwt\AccessToken;
 use Twilio\Jwt\Grants\VideoGrant;
-use Twilio\Rest\Client;
 
 // An identifier for your app - can be anything you'd like
 $appName = 'TwilioVideoDemo';
 
 // choose a random username for the connecting user
 $identity = randomUsername();
-
-$token = "b279fdd9e42fe596fa3e95ac5b863a0d";
-$client = new Client($TWILIO_ACCOUNT_SID, $token);
-$theToken = $client->tokens->create();
-echo $token->username;
 
 // Create access token, which we will serialize and send to the client
 $token = new AccessToken(
